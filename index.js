@@ -118,3 +118,25 @@ app.patch("/animals/:id", async(req,res) => {
   }
 
 })
+
+app.delete("/animals/:id", async(req,res) => {
+  const id = req.params.id;
+  const animals = JSON.parse(await fs.readFile(filename));
+  const animal = animals.find(animal => animal.id == id);
+
+  console.log("DELETE " + id);
+
+  if(animal) {
+    // remove animal from list, by finding and splicing its index
+    const index = animals.indexOf(animal);
+    animals.splice(index,1);
+
+    // re-save entire json-file (with the deleted animal removed)
+    fs.writeFile(filename, JSON.stringify(animals));
+    
+    res.json(animal);
+  } else {
+    res.status(404).end();
+  }
+
+});
