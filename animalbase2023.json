@@ -1,0 +1,112 @@
+[
+  {
+    "id": "00",
+    "age": 14,
+    "desc": "black",
+    "name": "Mia V2",
+    "star": false,
+    "type": "cat",
+    "winner": true
+  },
+  {
+    "id": "01",
+    "age": 14,
+    "desc": "growling",
+    "name": "Mandu",
+    "star": true,
+    "type": "cat",
+    "winner": false
+  },
+  {
+    "id": "02",
+    "age": 25,
+    "desc": "trained",
+    "name": "Toothless",
+    "property": true,
+    "star": false,
+    "type": "dragon",
+    "winner": true
+  },
+  {
+    "id": "03",
+    "age": 58,
+    "desc": "wondering",
+    "name": "Scoby Doo",
+    "star": false,
+    "type": "dog",
+    "winner": false
+  },
+  {
+    "id": "04",
+    "age": 90,
+    "desc": "confused",
+    "name": "Pluto22",
+    "star": true,
+    "type": "dog",
+    "winner": false
+  },
+  {
+    "id": "05",
+    "age": 10,
+    "desc": "horsing",
+    "name": "Horsey",
+    "star": false,
+    "type": "horse",
+    "winner": false
+  },
+  {
+    "id": "-NV9trLyqiQbzIRI_zZi",
+    "age": 8,
+    "desc": "fast",
+    "name": "Turbocat",
+    "property": true,
+    "star": false,
+    "type": "cat",
+    "winner": false
+  },
+  {
+    "id": "-NV9uTYH8UFRntXBT2Bz",
+    "age": 23,
+    "desc": "very slow",
+    "name": "Slowdog",
+    "star": true,
+    "type": "dog",
+    "winner": true
+  },
+  {
+    "id": "-NV9v7-G2-CuCigdlX81",
+    "age": 435,
+    "desc": "dangerous",
+    "name": "Drago5",
+    "star": false,
+    "type": "dragon",
+    "winner": true
+  },
+  {
+    "id": "-NbEItd-xPHijCfaHjVb",
+    "age": 23,
+    "desc": "sleepy",
+    "name": "newanimal",
+    "star": true,
+    "type": "cat",
+    "winner": false
+  },
+  {
+    "id": "-NbFDms-F6vOXSLULwCf",
+    "age": 13,
+    "desc": "sleepy",
+    "name": "newanimal23",
+    "star": false,
+    "type": "dog",
+    "winner": true
+  },
+  {
+    "id": "-NbFDnyvGofmEZfuUiP2",
+    "age": 13,
+    "desc": "sleepy",
+    "name": "newanimal24",
+    "star": false,
+    "type": "dog",
+    "winner": true
+  }
+]

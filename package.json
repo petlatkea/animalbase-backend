@@ -1,0 +1,17 @@
+{
+  "name": "animalbase-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "a REST backend for Animalbase2023",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --watch index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Peter Lind (petl@kea.dk)",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
+}
