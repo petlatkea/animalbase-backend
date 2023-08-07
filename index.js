@@ -17,7 +17,7 @@ app.get("/", (req,res) => res.send("Hello from animalbase"));
 
 app.get("/animals", async (req,res) => {
   const animals = JSON.parse(await fs.readFile(filename));
-  console.log(animals);
+//  console.log(animals);
   res.json(animals);
 });
 
@@ -57,4 +57,37 @@ app.put("/animals/:id", async(req,res) => {
   } else {
     res.status(404).end();
   }
+})
+
+app.patch("/animals/:id", async(req,res) => {
+  const id = req.params.id;
+  const animals = JSON.parse(await fs.readFile(filename));
+  const animal = animals.find(animal => animal.id == id);
+
+  console.log("PATCH");
+
+  if(animal) {
+/*    console.log("Animal:");
+    console.log(animal);
+    console.log("Patch with: ");
+    console.log(req.body);
+*/
+    // only patch properties that exist in the animal
+    for(const prop in req.body) {
+      if(animal[prop] != undefined) { // need to check for undefined, as some props are falsey
+        animal[prop] = req.body[prop];
+      }
+    }
+/*    console.log("To:");
+    console.log(animal);
+*/
+    // re-save entire json-file (with the update animal object inside)
+    fs.writeFile(filename, JSON.stringify(animals));
+    // respond with the patched animal
+    res.json(animal);
+
+  } else {
+    res.status(404).end();
+  }
+
 })
