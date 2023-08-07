@@ -33,6 +33,33 @@ app.get("/animals/:id", async (req,res) => {
   }
 });
 
+app.post("/animals", async (req,res) => {
+  const animals = JSON.parse(await fs.readFile(filename));
+
+  // generate "unique" id
+  const alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const id = alphabet[Math.floor(Math.random()*alphabet.length)] + alphabet[Math.floor(Math.random()*alphabet.length)] + alphabet[Math.floor(Math.random()*alphabet.length)] + new Date().getTime();
+
+  const animal = {
+    id: id,
+    name: req.body.name,
+    type: req.body.type,
+    desc: req.body.desc,
+    age: req.body.age,
+    winner: req.body.winner,
+    star: req.body.star
+  };
+
+  // add new animal object to the list
+  animals.push(animal);
+
+  // re-save entire json-file (with the new animal object at the end)
+  fs.writeFile(filename, JSON.stringify(animals));
+
+  // and return the newly created object
+  res.json(animal);
+});
+
 app.put("/animals/:id", async(req,res) => {
   const id = req.params.id;
   const animals = JSON.parse(await fs.readFile(filename));
