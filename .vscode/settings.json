@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "undefined/subscriptions/7d6aae8a-a7fc-4959-b221-f0216cb4fb33/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/petl-animalbase01",
+  "appService.deploySubpath": "."
+}
