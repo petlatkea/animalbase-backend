@@ -1,7 +1,6 @@
 import express from 'express';
 import fs from 'fs/promises';
 import cors from 'cors';
-import { log } from 'console';
 
 const filename = "animalbase2023.json";
 
