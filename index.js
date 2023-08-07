@@ -32,3 +32,29 @@ app.get("/animals/:id", async (req,res) => {
     res.status(404).end();
   }
 });
+
+app.put("/animals/:id", async(req,res) => {
+  const id = req.params.id;
+  const animals = JSON.parse(await fs.readFile(filename));
+  const animal = animals.find(animal => animal.id == id);
+
+  console.log("Put");
+
+  if(animal) {
+    // update found animal with request body
+    animal.name = req.body.name;
+    animal.type = req.body.type;
+    animal.desc = req.body.desc;
+    animal.age = req.body.age;
+    animal.winner = req.body.winner;
+    animal.star = req.body.star;
+    
+    // re-save entire json-file (with the update animal object inside)
+    fs.writeFile(filename, JSON.stringify(animals));
+
+    // respond with the updated animal
+    res.json(animal);
+  } else {
+    res.status(404).end();
+  }
+})
